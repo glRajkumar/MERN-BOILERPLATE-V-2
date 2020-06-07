@@ -1,0 +1,51 @@
+# @host = https://notestaking-mern.herokuapp.com
+@host = http://localhost:8000
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZWRjNWY3NDcxOTY5NDAzZDhiZDE4ZjMiLCJpYXQiOjE1OTE1MDEyMjIsImV4cCI6MTU5MTU2NjAyMn0.2a-mB8azUFx4pv5rgnGo328Wx_KpX1jsueXsWnzBv3c
+
+
+### get
+GET {{host}}
+
+### get me 
+GET {{host}}/user/me
+Authorization: {{token}}
+
+### register
+POST {{host}}/user/register
+Content-Type: application/json
+
+{
+    "name": "kiuj",
+    "email" : "kk@bb.bb",
+    "password" : "aA1!aaaa"
+}
+
+### login
+POST {{host}}/user/login
+Content-Type: application/json
+
+{
+    "email" : "kk@bb.bb",
+    "password" : "Aa1!abba"
+}
+
+### updatePass
+PUT {{host}}/user
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "email" : "kk@bb.bb",
+    "oldPass" : "aA1!aaaa",
+    "newPass" : "Aa1!abba"
+}
+
+### logout
+POST {{host}}/user/logout
+Content-Type: application/json
+Authorization: {{token}}
+
+### delete
+DELETE  {{host}}/user
+Content-Type: application/json
+Authorization: {{token}}
