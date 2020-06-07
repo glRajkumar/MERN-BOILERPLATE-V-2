@@ -5,9 +5,6 @@ import axios from 'axios'
 function ImageUpload({headers, updatePic}) {
     const [ selectedFile, setFile ] = useState(null)
     const [ progress, setProgress ] = useState(0)
-   
-    console.log("progress")
-    console.log(progress)
     
     const submit = (e) =>{
         e.preventDefault();                
@@ -18,7 +15,6 @@ function ImageUpload({headers, updatePic}) {
             headers,
             header: { 'content-type': 'multipart/form-data',
             onUploadProgress : progEvent => {
-                console.log(progEvent)
                 let percent = Math.floor((progEvent.loaded * 100) / progEvent.total)
                 if (percent < 100) setProgress(percent)
                 if(percent === 100) setProgress(99) 

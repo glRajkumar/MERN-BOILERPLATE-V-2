@@ -29,14 +29,12 @@ function NewPass({headers, updatePass}) {
     function conPassKeyDown(e) {
         if(e.key === "Enter") SubRef.current.focus()
     }
-    console.log(headers)
 
     const onSubmit = async (event) =>{
         event.preventDefault();
         try {
             if(operr === false && nperr === false && cperr === false){
-                let res = await axios.put("/user", { oldPass, newPass }, {headers})
-                console.log(res.data)
+                await axios.put("/user", { oldPass, newPass }, {headers})
                 updatePass()
             }
         } catch (error) {

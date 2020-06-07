@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { AuthContext } from './Contexts/AuthContextProvider'
-import { NavBar, Home, Signup, Login, Protected, UnAuthor, NotFound} from './Components'
-import ImageUpload from './Components/User/ImageUpload';
-import Profile from './Components/User/Profile';
+import { NotFound, Protected, UnAuthor } from './Components/Common'
+import { Home, Signup, Login, NavBar, Profile, ImageUpload } from './Components/User'
 
 const App = () => {
   const { auth } = useContext(AuthContext)

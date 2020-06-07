@@ -85,6 +85,7 @@ const AuthContextProvider = (props) =>{
     } catch (error) {
       console.log(error)
       dispatch({ type : "ERROR" })
+      throw new Error(error)
     }
   }
 

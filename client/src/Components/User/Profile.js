@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../Contexts/AuthContextProvider'
 import ImageUpload from './ImageUpload'
 import NewPass from './NewPass'
@@ -6,21 +6,8 @@ import NewPass from './NewPass'
 function Profile() {
     const { name, email, img, headers, updatePic, logout, deleteAcc } = useContext(AuthContext)
     const [ pass, setPass ] = useState(false)
-    // const [ pic, setPic ] = useState(false)
-    
-    // useEffect(()=>{
-    //     if(img){
-    //         setPic(true)
-    //     }
-    // })
     
     const updatePass = () => setPass(prev => !prev)
-
-    // const renPic = (val) => {
-    //     console.log(val)
-    //     updatePic(val)
-    //     setPic(true)
-    // }
 
     return (
         <div className="card text-center w-75 ml-auto mr-auto">

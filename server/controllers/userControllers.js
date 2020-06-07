@@ -34,7 +34,7 @@ router.post('/login', async (req, res)=>{
         if(!user) return res.status(401).json({ msg: "cannot find user in db" })
         
         let result = await bcrypt.compare(password, user.password)
-        if(!result) return res.json({ msg: "password not matched" })
+        if(!result) return res.status(400).json({ msg: "password not matched" })
         
         let payload = {userId : user._id}
         let token = jwt.sign(payload, process.env.jwtSecretKey , { expiresIn: '18h' })
@@ -68,7 +68,7 @@ router.put('/', auth, async (req,res) => {
         if(!user) return res.status(401).json({ msg: "cannot find user in db" })
 
         let result = await bcrypt.compare(oldPass, user.password)
-        if(!result) return res.json({msg: "password not matched"})
+        if(!result) return res.status(400).json({msg: "password not matched"})
         
         const salt = await bcrypt.genSalt(10)
         const hash = await bcrypt.hash(newPass, salt)

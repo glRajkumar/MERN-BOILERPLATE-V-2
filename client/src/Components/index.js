@@ -1,7 +1,0 @@
-export { default as Home } from './User/Home'
-export { default as NavBar } from './User/NavBar'
-export { default as Signup } from './User/Signup'
-export { default as Login } from './User/Login'
-export { default as Protected } from './Common/Protected'
-export { default as UnAuthor } from './Common/UnAuthor'
-export { default as NotFound } from './Common/NotFound'
